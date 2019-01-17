@@ -1,0 +1,38 @@
+body {
+    
+}
+.header {
+    background-color: dimgrey
+}
+
+.box {
+    width: 50%;
+    border: 1px solid black;
+    padding 3px;
+    margin: 10px 0px;
+    
+}
+
+.base {
+    padding: 0% 10%
+    
+}
+
+.header h1 {
+    padding: 0% 10%
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 18px;
+    
+}
+
+.1 {
+    font-size: 13px;
+    
+}
+
+2 {
+    font-size: 17px;
+}
