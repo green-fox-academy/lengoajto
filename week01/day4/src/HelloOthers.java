@@ -3,7 +3,7 @@ public class HelloOthers {
         System.out.println("Hello István!");
         System.out.println("Hello Szabi!");
         System.out.println("Hello Vali!");
-            
+
         }
     }
 

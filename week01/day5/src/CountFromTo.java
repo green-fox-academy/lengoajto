@@ -14,7 +14,7 @@ public class CountFromTo {
             for (; a < b; a++) {
                 System.out.println(a);
 
-2
+
             }
 
         }

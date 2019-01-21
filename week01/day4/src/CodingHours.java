@@ -15,7 +15,7 @@ public class CodingHours {
         float all = 17*7*24;
         float percentage = (52*17)/all*100;
         System.out.println(percentage +"%");
-                
+
         // Print the percentage of the coding hours in the semester if the average
         // work hours weekly is 52
     }
