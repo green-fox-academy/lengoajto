@@ -2,17 +2,27 @@ import javax.swing.*;
 
 import java.awt.*;
 
+import static java.awt.image.ImageObserver.HEIGHT;
+import static java.awt.image.ImageObserver.WIDTH;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class RainbowBoxes {
     public static void mainDraw(Graphics graphics) {
 
-        graphics.setColor(Color.MAGENTA);
-        for (int i = 0; i <160 ; i+=10) {
-            graphics.fillRect(i, i, 10, 10 );
+        Color[] rainbowColors = new Color[] {Color.RED, Color.ORANGE, Color.YELLOW,
+                Color.GREEN, Color.BLUE, new Color(128, 0, 128),
+                new Color(238, 130, 238)};
+        for (int i = 7; i >= 1; i--) {
+            drawingTheSquares(graphics, i * 300, rainbowColors[i - 1]);
+
         }
 
-    }
+        }
+        public static void drawingTheSquares(Graphics graphics, int size, Color fillcolor) {
+            graphics.setColor(fillcolor);
+            graphics.fillRect(WIDTH/2 - size/10/2, HEIGHT/2 - size/10/2, size/10, size/10);
+        }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
