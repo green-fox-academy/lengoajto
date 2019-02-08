@@ -4,8 +4,8 @@ import java.lang.*;
 
 public class Reptile extends Animal {
 
-    public Reptile(String name) {
-        super(name, weight, );
+    public Reptile(String name, int age, double weight, String gender, double height) {
+        super(name, age, weight, gender, height);
     }
 
 

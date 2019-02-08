@@ -3,7 +3,7 @@ package Zoo;
 import java.lang.*;
 
 public class Mammal extends Animal{
-    public Mammal(String koala, int i, String name, double v) {
+    public Mammal(String name, int age, double weight, String gender, double height) {
         super ( name, age, weight, gender, height);
     }
 
