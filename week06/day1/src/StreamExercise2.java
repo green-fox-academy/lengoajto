@@ -9,7 +9,7 @@ public class StreamExercise2 {
         System.out.println(squaredNumbers.toString());
     }
 }
-
+//filterrel megszuri a pozitiv szamokat, aztan beadja a mapbe, negyzetre emeli, listet var vissza. punktum
 
 
 
