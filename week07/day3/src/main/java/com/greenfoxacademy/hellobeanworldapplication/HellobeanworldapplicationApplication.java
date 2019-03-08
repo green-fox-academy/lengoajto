@@ -1,5 +1,6 @@
 package com.greenfoxacademy.hellobeanworldapplication;
 
+import com.greenfoxacademy.hellobeanworldapplication.Model.MyColor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -14,7 +15,7 @@ public class HellobeanworldapplicationApplication implements CommandLineRunner {
     private MyColor mycolor;
 
     @Autowired
-    public HellobeanworldapplicationApplication (@Qualifier("Green") MyColor mycolor) {
+    public HellobeanworldapplicationApplication (@Qualifier("Green Color") MyColor mycolor) {
         this.mycolor = mycolor;
     }
 

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.hellobeanworldapplication;
+package com.greenfoxacademy.hellobeanworldapplication.Model;
 
 public interface MyColor {
 
