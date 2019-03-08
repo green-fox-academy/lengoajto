@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank of Simba</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>Index</th>
+        <th>King</th>
+        <th>Bad/Good</th>
+    </tr>
+    <tr th:each="bankAccount : ${bankAccounts}" th:class="${bankAccount.king} ? 'king' : ''">
+        <td th:text="${bankAccount.name}"></td>
+        <td th:text="|${#numbers.formatDecimal(bankAccount.balance, 1, 'NONE', 2, 'POINT')} Zebra|"></td>
+        <td th:text="${bankAccount.animalType}"></td>
+        <td class="index" th:text="${bankAccountStat.index}"></td>
+        <!--<td class="index" th:if="${bankAccount.king}" th:text="King"></td>
+        <td th:unless="${bankAccount.king}" th:text="' '"></td>-->
+        <td class="index" th:text="${bankAccount.king} ? 'King' : ' '"></td>
+        <td class="index" th:text="${bankAccount.good} ? 'Good Guy' : 'Bad One'"></td>
+    </tr>
+</table>
+<form action="#" th:action="@{/bank/accounts}" method="post">
+    <label>Raise the balance of a selected animal:</label>
+    <select name="animalIndex" >
+        <option th:each="bankAccount : ${bankAccounts}" th:text="${bankAccount.name}" th:value="${bankAccountStat.index}"></option>
+    </select>
+    <input type="submit" value="Raise Balance">
+</form>
+<form action="#" th:action="@{/bank/accounts/add}" th:object="${newBankAccount}" method="post">
+    <input type="text" name="name" th:field="*{name}" required/>
+    <input type="text" name="balance" th:field="*{balance}" required/>
+    <input type="text" th:field="*{animalType}" required/>
+    <label th:text="'King:'"></label>
+    <input type="checkbox" th:field="*{king}"/>
+    <label th:text="'Good:'"></label>
+    <input type="radio" name="good" value="true" th:field="*{good}" checked>
+    <label th:text="'Bad:'"></label>
+    <input type="radio" name="good" value="false" th:field="*{good}">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
