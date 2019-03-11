@@ -1,15 +1,16 @@
 package com.greenfoxacademy.listingtodo.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping(value = "/todo")
 public class ToDoController {
 
-
-
-
-
-
+    @RequestMapping(value = {"/","/list"})
+    @ResponseBody
+    public String list(){
+        return "This is my first Todo";
+    }
 }
-
-//Create a new controller called TodoController which maps to /todo
-//Add a public String list() method which maps to / and /list in the controller, which returns with
-// "This is my first Todo" string. Use the @ResponseBody annotation.
-//Run the application. If all works fine, then you can go ahead.
