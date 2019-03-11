@@ -1,13 +1,18 @@
 package com.greenfoxacademy.listingtodo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class ToDo {
 
+    @Id
     private long id;
     private String title;
     private boolean urgent;
     private boolean done;
 
-    public ToDo(long id, String title, boolean urgent, boolean done) {
+    public ToDo(String title) {
         this.id = id;
         this.title = title;
         this.urgent = false;
@@ -21,10 +26,6 @@ public class ToDo {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitle() {
