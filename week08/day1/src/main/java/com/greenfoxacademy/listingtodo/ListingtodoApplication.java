@@ -17,7 +17,7 @@ public class ListingtodoApplication implements CommandLineRunner {
         SpringApplication.run(ListingtodoApplication.class, args);
     }
 
-        
+
     @Override
     public void run(String... args) throws Exception {
     repositoryInterface.save(new ToDo("kiverem"));
