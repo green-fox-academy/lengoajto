@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Created by aze on 25/10/17.
- */
 @Controller
 @RequestMapping("/")
 public class AppController {
@@ -27,8 +24,8 @@ public class AppController {
     }
 
     @PostMapping("/app")
-    public String create() {
-        service.save(new User());
+    public String create(User user) {
+        service.save(user);
         return "redirect:/app";
     }
 }
