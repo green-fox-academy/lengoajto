@@ -3,29 +3,26 @@ package com.greenfoxacademy.listingtodo.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import javax.persistence.*;
+
 @Entity
-public class ToDo {
+public class Todo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private boolean urgent;
     private boolean done;
+    @ManyToOne
+    private Asignee asignee;
 
-    public ToDo(String title) {
-        this.id = id;
+    public Todo(){
+
+    }
+
+    public Todo(String title){
         this.title = title;
-        this.urgent = false;
-        this.done = false;
-    }
-
-    public ToDo() {
-        this.urgent = false;
-        this.done = false;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getTitle() {
@@ -50,5 +47,17 @@ public class ToDo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public Asignee getAsignee() {
+        return asignee;
+    }
+
+    public void setAsignee(Asignee asignee) {
+        this.asignee = asignee;
     }
 }
